@@ -1,18 +1,22 @@
-<table class="table table-hover table-responsive">
+<div class="table-responsive">
+  <table class="table table-striped table-hover text-center w-auto">
     <thead class="table-dark">
-        <tr>
-            <th scope="col">Azonosító</th>
-            <th scope="col">Név</th>
-            <th scope="col">Típus</th>
-            <th scope="col">Erő</th>
-        </tr>
-    </thead> 
+      <tr>
+        <th scope="col">Azonosító</th>
+        <th scope="col">Név</th>
+        <th scope="col">Típus</th>
+        <th scope="col">Erő</th>
+        <th scope="col" colspan="2">Műveletek</th>
+      </tr>
+    </thead>
     <tbody>
-        <tr *ngFor="let robot of robotList">
-            <td>{{robot.id}}</td>
-            <td>{{robot.name}}</td>
-            <td>{{robot.type}}</td>
-            <td>{{robot.strength}}</td>
-        </tr>
+      <tr *ngFor="let robot of robotList">
+        <th scope="row">{{ robot.id }}</th>
+        <td>{{ robot.name }}</td>
+        <td>{{ robot.type }}</td>
+        <td>{{ robot.strength }}</td>
+        <td><button type="button">Törlés</button></td>
+      </tr>
     </tbody>
-</table>
+  </table>
+</div>
