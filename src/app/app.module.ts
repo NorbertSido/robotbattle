@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RobotListComponent } from './components/CRUD/robot-list/robot-list.component';
 import { RobotEditComponent } from './components/CRUD/robot-edit/robot-edit.component';
 import { RobotAddComponent } from './components/CRUD/robot-add/robot-add.component';
+import { BattleComponent } from './components/battle/battle.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RobotAddComponent } from './components/CRUD/robot-add/robot-add.compone
     RobotListComponent,
     RobotEditComponent,
     RobotAddComponent,
+    BattleComponent,
   ],
   imports: [
     BrowserModule,
