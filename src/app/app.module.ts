@@ -8,6 +8,7 @@ import { RobotListComponent } from './components/CRUD/robot-list/robot-list.comp
 import { RobotEditComponent } from './components/CRUD/robot-edit/robot-edit.component';
 import { RobotAddComponent } from './components/CRUD/robot-add/robot-add.component';
 import { BattleComponent } from './components/battle/battle.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BattleComponent } from './components/battle/battle.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()
