@@ -10,12 +10,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let robot of robotList">
+      <tr *ngFor="let robot of robotList" class="vertical-center">
         <th scope="row">{{ robot.id }}</th>
         <td>{{ robot.name }}</td>
         <td>{{ robot.type }}</td>
         <td>{{ robot.strength }}</td>
-        <td><button type="button">Törlés</button></td>
+        <td><button type="button" class="btn btn-primary">Kiválaszt</button></td>
+        <td><button type="button" class="btn btn-danger">Törlés</button></td>
       </tr>
     </tbody>
   </table>
