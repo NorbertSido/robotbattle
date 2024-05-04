@@ -1,30 +1,32 @@
-<h2>Add new robot</h2>
-<form [formGroup]="newRobot" (ngSubmit)="submit()" novalidate class="d-flex flex-column">
-    <!-- Robot name -->
-    <label for="robotName">Név</label>
-    <input formControlName="robotName" type="text" placeholder="Enter robot name" name="robotName">
-    <div *ngIf="!robotName?.valid && (robotName?.touched || robotName?.dirty)">
-        Robot nevének megadása kötelező!
-    </div>
-
-    <!-- Robot type -->
-    <label for="robotType">Típus</label>
-    <select formControlName="robotType" name="robotType" id="">
-        <option value="null" disabled>Select type</option>
-        <option [value]="type.value" *ngFor="let type of types">{{type.label}}</option>
-    </select>
-    <div *ngIf="!robotType?.valid && (robotType?.touched || robotType?.dirty)">
-        Robot típusának kiválasztása kötelező!
-    </div>
-
-    <!-- Robot strenght -->
-    <label for="robotStr">Erő</label>
-    <input formControlName="robotStr" type="number" name="robotStr" id="" placeholder="Enter robot strenght">
-    <div *ngIf="!robotStr?.valid && (robotStr?.touched || robotStr?.dirty)">
-        <span *ngIf="robotStr?.errors?.['required']">Robot erejének megadása kötelező!</span>
-        <span *ngIf="robotStr?.errors?.['min']">Robot ereje minimum 1 lehet!</span>
-        <span *ngIf="robotStr?.errors?.['max']">Robot ereje maximum 100 lehet!</span>
-    </div>
-
-    <button type="submit" [disabled]="!newRobot.valid">Létrehozás</button>
-</form>
+<div>
+    <h2 class="text-center">Add new robot</h2>
+    <form [formGroup]="newRobot" (ngSubmit)="submit()" novalidate class="d-flex flex-column">
+        <!-- Robot name -->
+        <label for="robotName">Név</label>
+        <input formControlName="robotName" type="text" placeholder="Enter robot name" name="robotName">
+        <div *ngIf="!robotName?.valid && (robotName?.touched || robotName?.dirty)">
+            Robot nevének megadása kötelező!
+        </div>
+    
+        <!-- Robot type -->
+        <label for="robotType">Típus</label>
+        <select formControlName="robotType" name="robotType" id="">
+            <option value="null" disabled>Select type</option>
+            <option [value]="type.value" *ngFor="let type of types">{{type.label}}</option>
+        </select>
+        <div *ngIf="!robotType?.valid && (robotType?.touched || robotType?.dirty)">
+            Robot típusának kiválasztása kötelező!
+        </div>
+    
+        <!-- Robot strenght -->
+        <label for="robotStr">Erő</label>
+        <input formControlName="robotStr" type="number" name="robotStr" id="" placeholder="Enter robot strenght">
+        <div *ngIf="!robotStr?.valid && (robotStr?.touched || robotStr?.dirty)">
+            <span *ngIf="robotStr?.errors?.['required']">Robot erejének megadása kötelező!</span>
+            <span *ngIf="robotStr?.errors?.['min']">Robot ereje minimum 1 lehet!</span>
+            <span *ngIf="robotStr?.errors?.['max']">Robot ereje maximum 100 lehet!</span>
+        </div>
+    
+        <button type="submit" [disabled]="!newRobot.valid">Létrehozás</button>
+    </form>
+</div>
