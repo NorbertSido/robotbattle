@@ -1,6 +1,6 @@
 <div>
     <h2 class="text-center">Add new robot</h2>
-    <form [formGroup]="newRobot" (ngSubmit)="submit()" novalidate class="d-flex flex-column">
+    <form [formGroup]="newRobotForm" (ngSubmit)="submit()" novalidate class="d-flex flex-column">
         <!-- Robot name -->
         <label for="robotName">Név</label>
         <input formControlName="robotName" type="text" placeholder="Enter robot name" name="robotName">
@@ -27,6 +27,6 @@
             <span *ngIf="robotStr?.errors?.['max']">Robot ereje maximum 100 lehet!</span>
         </div>
     
-        <button type="submit" [disabled]="!newRobot.valid">Létrehozás</button>
+        <button type="submit" [disabled]="!newRobotForm.valid">Létrehozás</button>
     </form>
 </div>
