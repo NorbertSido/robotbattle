@@ -12,5 +12,11 @@ export class RobotListComponent implements OnInit {
 
   constructor(private service: RobotService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.service.getData()
+      .subscribe({
+        next: (data) => { this.data = data },
+        error: (error) => {console.log(error)}
+      })
+  }
 }
