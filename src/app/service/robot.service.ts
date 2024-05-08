@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class RobotService {
-  baseUrl = 'http//localhost:3000/data';
+  baseUrl = '';
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class RobotService {
   getData() {
     return this.http.get<any>(this.baseUrl).pipe(
       map((response) => {
-        let temp: Robot[] = [];
+        let list: Robot[] = [];
 
         for (let i = 0; i < response.data.length; i++) {
           let robot = new Robot(
@@ -24,11 +24,11 @@ export class RobotService {
             response.data[i].type,
             response.data[i].strength
           );
-          temp.push(robot);
+          list.push(robot);
         }
-        return temp;
+        return list;
       })
-    );
+    )
   }
 
   // Új Robot hozzáadása
